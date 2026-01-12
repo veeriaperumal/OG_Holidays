@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Main Layout */
+.contact-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden; 
+}
+
+.contact-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  gap: 50px;
+  z-index: 2; 
+}
+
+/* Left Column Styling */
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #000;
+  
+  /* ANIMATION */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: #000;
+  max-width: 90%;
+
+  /* ANIMATION */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+/* Buttons */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 4rem;
+  width: 100%;
+  max-width: 500px;
+
+  /* ANIMATION */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden; /* For any internal shine effects if added */
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.btn-whatsapp { background-color: #2e8b57; }
+.btn-call { background-color: #5b8dfa; }
+.btn-instagram { background-color: #ff5252; }
+
+/* Icons inside buttons */
+.icon-wrapper {
+  position: absolute;
+  left: 25px; /* Keeps icon fixed to left */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Constrain width */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .icon-wrapper {
+  transform: scale(1.1); /* Subtle icon pop on hover */
+}
+
+.icon-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Footer Info Row */
+.contact-info-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+
+  /* ANIMATION */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-3px);
+}
+
+/* Footer Icons styling */
+.info-icon-img {
+  width: 30px; 
+  height: 30px;
+  object-fit: contain;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-text .label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.info-text .value {
+  color: #ff6b81; 
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Right Column (Map) Styling */
+.contact-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  /* ANIMATION */
+  opacity: 0;
+  animation: fadeInRight 1s ease-out 0.4s forwards;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e0e0e0; 
+  padding: 10px;
+  background: #fff;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.map-wrapper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.location-badge {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  /* Transform handled in keyframes to maintain centering */
+  transform: translateX(-50%); 
+  background-color: #000;
+  color: #fdd835; 
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  white-space: nowrap;
+  
+  /* ANIMATION: Float */
+  animation: floatBadge 4s ease-in-out infinite;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
+  
+  .yellow-bg-accent {
+    display: none; 
+  }
+
+  .contact-info-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contact-buttons {
+    max-width: 100%;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================
+   MODERN KEYFRAME ANIMATIONS
+============================ */
+
+/* Fade In Up (for text/buttons) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Right (for map) */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Floating Badge Animation (Preserves center alignment) */
+@keyframes floatBadge {
+  0% {
+    transform: translateX(-50%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0px);
+  }
+}

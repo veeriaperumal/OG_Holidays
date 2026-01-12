@@ -1,0 +1,10 @@
+.footer-bottom {
+  width: 100%;
+  background-color: #f4c75a; /* exact yellow */
+  color: #ffffff;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 14px 10px;
+  letter-spacing: 0.3px;
+}
