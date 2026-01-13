@@ -318,3 +318,109 @@
 .domestic-card:nth-child(6) { animation-delay: 0.6s; }
 .domestic-card:nth-child(7) { animation-delay: 0.7s; }
 .domestic-card:nth-child(8) { animation-delay: 0.8s; }
+/* =========================================
+   MOBILE RESPONSIVE MEDIA QUERIES (Services Page)
+   (Paste at the bottom of your CSS file)
+========================================= */
+
+/* --- Tablet & Small Laptops (Max Width: 1024px) --- */
+@media (max-width: 1024px) {
+  
+  /* Adjust Grids to 2 Columns */
+  .domestic-grid, 
+  .international-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  /* Center Grid for tablets */
+  .international-center-grid,
+  .group-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Reduce Side Padding */
+  .domestic-section,
+  .international-section,
+  .group-section {
+    padding: 60px 20px;
+  }
+}
+
+/* --- Mobile Breakpoint (Max Width: 768px) --- */
+@media (max-width: 768px) {
+
+  /* 1. HERO SECTION */
+  .services-hero {
+    padding: 60px 20px 40px;
+  }
+
+  .services-hero h1 {
+    font-size: 32px; /* Smaller Title */
+  }
+
+  /* 2. PILL TITLES (Domestic, International, Group) */
+  .domestic-pill,
+  .international-pill,
+  .group-pill {
+    font-size: 28px; /* Reduce from 50px to prevent overflow */
+    padding: 10px 20px;
+    white-space: nowrap; /* Keep text on one line if possible */
+  }
+
+  /* 3. GRIDS (Stack to 1 Column) */
+  .domestic-grid,
+  .international-grid,
+  .international-center-grid,
+  .group-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    max-width: 400px; /* Limit width for better look */
+    margin: 0 auto; /* Center the grid */
+    gap: 24px;
+  }
+
+  /* 4. SECTIONS PADDING */
+  .domestic-section,
+  .international-section,
+  .group-section {
+    padding: 40px 15px; /* Tighter padding for mobile */
+  }
+
+  /* 5. CARD ADJUSTMENTS */
+  .domestic-card img,
+  .international-card img,
+  .group-card img {
+    height: 200px; /* Slightly shorter images */
+  }
+
+  /* Center the pills if they aren't already */
+  .domestic-section, 
+  .international-section, 
+  .group-section {
+    text-align: center;
+  }
+}
+
+/* --- Small Mobile Screens (Max Width: 480px) --- */
+@media (max-width: 480px) {
+  .services-hero h1 {
+    font-size: 28px;
+  }
+
+  .domestic-pill,
+  .international-pill,
+  .group-pill {
+    font-size: 22px; /* Even smaller for very small screens */
+    padding: 8px 16px;
+  }
+  
+  .domestic-card p,
+  .international-card p,
+  .group-card p {
+    font-size: 14px;
+  }
+}

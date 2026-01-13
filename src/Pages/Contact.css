@@ -52,18 +52,91 @@
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
 
-/* Buttons */
+/* CONTAINER */
 .contact-buttons {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 4rem;
   width: 100%;
-  max-width: 500px;
-
-  /* ANIMATION */
+  max-width: 400px; /* Limits width so buttons aren't huge */
+  
+  /* Animation */
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+/* SHARED BUTTON STYLES */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns content to the left */
+  padding: 12px 20px;
+  border-radius: 50px; /* Rounded pill shape */
+  text-decoration: none; /* REMOVES UNDERLINE */
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff; /* Text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Fills the container */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ICON WRAPPER */
+.icon-wrapper {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent circle */
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.icon-wrapper img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.btn-text{
+  margin-right: -50px;
+}
+
+/* --- SPECIFIC COLORS --- */
+
+/* WhatsApp Green */
+.btn-whatsapp {
+  background: #25D366;
+}
+.btn-whatsapp:hover {
+  background: #20bd5a;
+}
+
+/* Call Button (Yellow/Brand Color) */
+.btn-call {
+  background: #f2c55a; /* Your brand yellow */
+}
+.btn-call:hover {
+  background: #e0b44b;
+}
+
+/* Instagram Gradient */
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+.btn-instagram:hover {
+  opacity: 0.9;
 }
 
 .btn {
@@ -279,5 +352,141 @@
   }
   100% {
     transform: translateX(-50%) translateY(0px);
+  }
+}
+/* =========================================
+   MOBILE RESPONSIVE MEDIA QUERIES (Contact Section)
+   (Paste at the bottom of your CSS file)
+========================================= */
+
+/* --- Tablet & Small Laptops (Max Width: 1024px) --- */
+@media (max-width: 1024px) {
+  .contact-section {
+    padding: 60px 20px;
+    height: auto; /* Remove fixed height */
+    min-height: auto;
+  }
+
+  .contact-container {
+    flex-direction: column; /* Stack Left and Right columns */
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+  }
+
+  /* Center the Text Content */
+  .contact-left {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .contact-title {
+    font-size: 2.8rem; /* Smaller Title */
+  }
+
+  .contact-subtitle {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* Center Buttons */
+  .contact-buttons {
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+  }
+
+  /* Adjust Info Row (Email/Phone text below buttons) */
+  .contact-info-row {
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+}
+
+/* --- Mobile Breakpoint (Max Width: 768px) --- */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2.2rem; /* Even smaller for phones */
+  }
+
+  /* Adjust Buttons for Mobile Touch */
+  .btn {
+    height: 60px; /* Slightly smaller height */
+    font-size: 1.1rem;
+    width: 100%; /* Full width */
+  }
+
+  .icon-wrapper {
+    width: 32px;
+    height: 32px;
+    left: 20px;
+  }
+
+  /* Stack the Info Row Vertically */
+  .contact-info-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Map Adjustments */
+  .contact-right {
+    width: 100%;
+  }
+
+  .map-wrapper {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .location-badge {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    bottom: 20px;
+  }
+}
+
+/* --- Small Mobile Screens (Max Width: 480px) --- */
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* Compact Buttons */
+  .btn {
+    height: 55px;
+    font-size: 1rem;
+    padding-left: 0;
+    justify-content: center;
+  }
+  
+  /* Fix Icon position for small buttons */
+  .icon-wrapper {
+    position: relative;
+    left: auto;
+    margin-right: 10px;
+  }
+  
+  /* Center text since icon is now relative */
+  .btn-text {
+    margin-right: 0;
+  }
+
+  .location-badge {
+    font-size: 0.9rem;
+    padding: 8px 20px;
   }
 }

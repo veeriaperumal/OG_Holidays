@@ -1,6 +1,6 @@
 import "./Home.css";
-import { Send } from "lucide-react";
-import { useState } from "react";
+import { Send, ArrowLeft, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const testimonials = [
   {
@@ -68,8 +68,8 @@ const faqs = [
   ];
 
 export default function Home() {
-      const [index, setIndex] = useState(0);
-      const [active, setActive] = useState(0);
+   const [index, setIndex] = useState(0);
+  const [active, setActive] = useState(0);
   const current = testimonials[index];
 
   // --- 1. SCROLL FUNCTION ---
@@ -80,6 +80,18 @@ export default function Home() {
     }
   };
 
+ // --- 2. AUTO SLIDE LOGIC ---
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 2000); // Change slide every 5000ms (5 seconds)
+
+    // Cleanup function: Clears timer if component unmounts or index changes
+    // This prevents "double jumps" when you manually click arrows
+    return () => clearInterval(interval);
+  }, [index]); 
+
+  // --- 3. MANUAL CONTROLS ---
   const prevSlide = () => {
     setIndex(index === 0 ? testimonials.length - 1 : index - 1);
   };
@@ -247,53 +259,67 @@ export default function Home() {
           </div>
         </div>
       </section>
-     <section id="testimonials" className="testimonial-section">
-      {/* TOP */}
-      <span className="testimonial-tag">Testimonials</span>
-      <h2 className="testimonial-title">What Our Travellers Say</h2>
+{/* TESTIMONIALS SECTION */}
+      <section id="testimonials" className="testimonial-section">
+        {/* TOP */}
+        <span className="testimonial-tag">Testimonials</span>
+        <h2 className="testimonial-title">What Our Travellers Say</h2>
 
-      {/* CARD */}
-      <div className="testimonial-card">
-        {/* LEFT ARROW */}
-        <div className="testimonial-arrow arrow-left" onClick={prevSlide}>
-          ←
+        {/* CONTAINER FOR ARROWS + CARD */}
+        <div className="testimonial-wrapper">
+          
+          {/* LEFT FLOATING BUTTON */}
+          <button className="side-nav-btn left-btn" onClick={prevSlide}>
+            <ArrowLeft size={20} />
+          </button>
+
+          {/* MAIN CARD */}
+          <div className="testimonial-card">
+            {/* LEFT COLUMN: IMAGE & NAME */}
+            <div className="testimonial-img-container">
+               {/* Dotted Border Wrapper */}
+               <div className="img-border-dashed">
+                  <img src={current.image} alt={current.name} className="testimonial-main-img" />
+               </div>
+               
+               {/* NAME MOVED HERE - Directly under the image */}
+               <h3 className="testimonial-name-large">{current.name}</h3>
+               
+               {/* Optional Subtitle (e.g. "Honeymoon Trip") */}
+               {current.subtitle && <p className="testimonial-sub-small">{current.subtitle}</p>}
+            </div>
+
+            {/* RIGHT COLUMN: CONTENT */}
+            <div className="testimonial-content">
+              <span className="quote-icon-large">“</span>
+              
+              <p className="testimonial-text">{current.text}</p>
+              
+              <div className="quote-icon-bottom">”</div>
+
+              <div className="testimonial-stars">★ ★ ★ ★ ★</div>
+            </div>
+          </div>
+
+          {/* RIGHT FLOATING BUTTON */}
+          <button className="side-nav-btn right-btn" onClick={nextSlide}>
+             <ArrowRight size={20} />
+          </button>
         </div>
-
-        {/* IMAGE */}
-        <div className="testimonial-img">
-          <img src={current.image} alt={current.name} />
+        
+        {/* BOTTOM NAV PILL */}
+        <div className="testimonial-nav">
+          <div className="nav-pill">
+            <button className="nav-btn" onClick={prevSlide}>
+              <ArrowLeft size={24} strokeWidth={2.5} />
+            </button>
+            <button className="nav-btn" onClick={nextSlide}>
+              <ArrowRight size={24} strokeWidth={2.5} />
+            </button>
+          </div>
         </div>
-
-        {/* CONTENT */}
-        <div className="testimonial-content">
-          <span className="quote-left">“</span>
-
-          <p className="testimonial-text">{current.text}</p>
-
-          <span className="quote-right">”</span>
-
-          <div className="testimonial-stars">★ ★ ★ ★ ★</div>
-
-          <div className="testimonial-name">{current.name}</div>
-
-          {current.subtitle && (
-            <div className="testimonial-sub">{current.subtitle}</div>
-          )}
-        </div>
-
-        {/* RIGHT ARROW */}
-        <div className="testimonial-arrow arrow-right" onClick={nextSlide}>
-          →
-        </div>
-      </div>
-
-      {/* BOTTOM NAV */}
-      <div className="testimonial-nav">
-        <span>
-          {index + 1} / {testimonials.length}
-        </span>
-      </div>
-    </section>
+        
+      </section>
     <section className="stats-section">
   <div className="stats-container">
     {/* CARD 1 */}
@@ -472,117 +498,22 @@ export default function Home() {
           </div>
         ))}
       </div>
+  {/* NEWSLETTER BOX */}
+      <div className="newsletter-container">
+        <div className="newsletter-box">
+          <h3>
+            Subscribe for <br /> Latest Newsletter
+          </h3>
+
+          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Your Email Address" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        </div>
+        
     </section>
-    <section className="footer-section">
-  {/* NEWSLETTER */}
-  <div className="newsletter-box">
-    <h3>
-      Subscribe for <br /> Latest Newsletter
-    </h3>
 
-    <div className="newsletter-form">
-      <input type="email" placeholder="Your Email Address" />
-      <button>Subscribe</button>
-    </div>
-  </div>
-
-  {/* FOOTER CONTENT */}
-  <div className="footer-content">
-    {/* BRAND */}
-    <div className="footer-brand">
-      <h2>
-        <span>OG</span> Holidays
-      </h2>
-      <p>
-        Delivering perfect holidays <br />
-        with comfort, safety, and <br />
-        great value
-      </p>
-
-     {/* ... inside the footer-brand div ... */}
-
-<div className="footer-socials">
-  {/* Make sure these images exist in public/images/ */}
-  <div className="footer-social-icon">
-    <img src="/images/fac.png" alt="Facebook" />
-  </div>
-  <div className="footer-social-icon">
-    <img src="/images/twit.png" alt="Twitter" />
-  </div>
-  <div className="footer-social-icon">
-    <img src="/images/you.png" alt="YouTube" />
-  </div>
-  <div className="footer-social-icon">
-    <img src="/images/insta1.png" alt="Instagram" />
-  </div>
-</div>
-    </div>
-
-  {/* --- 2. UPDATED QUICK LINKS WITH SCROLL --- */}
-          <div className="footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li onClick={() => scrollToSection("about")}>About Us</li>
-              <li onClick={() => scrollToSection("/services")}>Services</li>
-              <li onClick={() => scrollToSection("packages")}>Packages</li>
-              <li onClick={() => scrollToSection("testimonials")}>Testimonials</li>
-              <li onClick={() => scrollToSection("contact")}>Contact Us</li>
-              <li onClick={() => scrollToSection("destinations")}>Destinations</li>
-            </ul>
-          </div>
-
-{/* CONTACT */}
-  <div className="footer-contact">
-    <h4>Get In Touch</h4>
-
-    {/* Phone */}
-    <div className="footer-contact-item">
-      <img
-        src="/images/phone3.png"
-        alt="Phone"
-        className="footer-contact-icon"
-      />
-      <p className="footer-contact-text">+1 12345 67890</p>
-    </div>
-
-    {/* Email */}
-    <div className="footer-contact-item">
-      <img
-        src="/images/email1.png"
-        alt="Email"
-        className="footer-contact-icon"
-      />
-      <p className="footer-contact-text">example@gmail.com</p>
-    </div>
-
-    {/* Location */}
-    <div className="footer-contact-item">
-      <img
-        src="/images/map1.png"
-        alt="Location"
-        className="footer-contact-icon"
-      />
-      <p className="footer-contact-text">
-        1014 N Main St, Miami, Oklahoma, 74354, United States
-      </p>
-    </div>
-  </div>
-
-    {/* INSTAGRAM */}
-    <div className="footer-insta">
-      <h4>Follow Us On @instagram</h4>
-
-      <div className="insta-grid">
-        <img src="/images/i1.png" />
-        <img src="/images/i2.png" />
-        <img src="/images/i3.png" />
-        <img src="/images/i4.png" />
-        <img src="/images/i5.png" />
-        <img src="/images/i6.png" />
-      </div>
-    </div>
-  </div>
-</section>
 
 
 

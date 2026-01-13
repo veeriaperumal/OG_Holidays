@@ -13,31 +13,41 @@ const Contact = () => {
             Contact OG Holidays for personalised tour packages and travel assistance
           </p>
 
-          <div className="contact-buttons">
-            <button className="btn btn-whatsapp">
-              <div className="icon-wrapper">
-                {/* References public/images/whatsapp.png */}
-                <img src="/images/whats.png" alt="Whatsapp" />
-              </div>
-              <span className="btn-text">Whatsapp us</span>
-            </button>
-            
-            <button className="btn btn-call">
-              <div className="icon-wrapper">
-                {/* References public/images/phone-white.png */}
-                <img src="/images/phone2.png" alt="Call" />
-              </div>
-              <span className="btn-text">Call Us</span>
-            </button>
-            
-            <button className="btn btn-instagram">
-              <div className="icon-wrapper">
-                {/* References public/images/instagram.png */}
-                <img src="/images/insta.png" alt="Instagram" />
-              </div>
-              <span className="btn-text">Follow Us</span>
-            </button>
-          </div>
+       <div className="contact-buttons">
+  {/* WhatsApp */}
+  <a 
+    href="https://wa.me/message/URO5FLGSHZNON1" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="btn btn-whatsapp"
+  >
+    <div className="icon-wrapper">
+      <img src="/images/whats.png" alt="Whatsapp" />
+    </div>
+    <span className="btn-text">Whatsapp us</span>
+  </a>
+
+  {/* Call Us - Changed to anchor tag for functionality */}
+  <a href="tel:+919876543210" className="btn btn-call">
+    <div className="icon-wrapper">
+      <img src="/images/phone2.png" alt="Call" />
+    </div>
+    <span className="btn-text">Call Us</span>
+  </a>
+
+  {/* Instagram */}
+  <a 
+    href="https://www.instagram.com/og_holidays?igsh=aTFobGt6NmYxeWVl&utm_source=qr" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="btn btn-instagram"
+  >
+    <div className="icon-wrapper">
+      <img src="/images/insta.png" alt="Instagram" />
+    </div>
+    <span className="btn-text"> Follow Us</span>
+  </a>
+</div>
 
           <div className="contact-info-row">
             <div className="info-item">
