@@ -424,3 +424,72 @@
     font-size: 14px;
   }
 }
+
+/* =========================================
+   FLOATING CONTACT BUTTONS (STICKY)
+   ========================================= */
+.floating-contact {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999; /* Ensure it stays above everything */
+}
+
+.floating-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: floatChat 3s ease-in-out infinite;
+}
+
+/* WhatsApp Specific */
+.whatsapp-btn {
+  background: #25D366;
+}
+
+/* Phone Specific */
+.phone-btn {
+  background: #f2c55a; /* Matches your theme color */
+  animation-delay: 0.5s; /* Staggered animation */
+}
+
+.floating-btn:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ANIMATION: Chatbot-style floating --- */
+@keyframes floatChat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* --- MEDIA QUERY: Mobile Adjustments --- */
+@media (max-width: 768px) {
+  .floating-contact {
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .floating-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
