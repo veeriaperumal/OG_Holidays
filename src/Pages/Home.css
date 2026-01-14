@@ -1215,7 +1215,6 @@ html {
 @media (max-width: 1024px) {
   /* Global Container Adjustments */
   .home-container,
-  .home-about-container,
   .contact-container,
   .love-container,
   .stats-container {
@@ -1224,7 +1223,6 @@ html {
 
   /* Typography Scaling */
   .home-title, 
-  .home-about-right h2,
   .testimonial-title {
     font-size: 38px;
   }
@@ -1247,10 +1245,7 @@ html {
   /* Image Resizing */
   .img-large { width: 220px; height: 360px; }
   .img-small { width: 150px; height: 190px; }
-  
-  /* About Images */
-  .about-main-img { width: 280px; height: 320px; margin-left: -20px; }
-  .about-small-img { width: 380px; height: 380px; bottom: -80px; left: 80px; }
+
 }
 
 /* --- Mobile Devices (Max Width: 768px) --- */
@@ -1258,7 +1253,6 @@ html {
   
   /* --- GLOBAL SECTION PADDING --- */
   .home,
-  .home-about-section,
   .testimonial-section,
   .stats-section,
   .contact-section,
@@ -1296,61 +1290,6 @@ html {
     box-shadow: 0 5px 15px rgba(242, 197, 90, 0.5);
   }
 
-  /* --- SEARCH BAR --- */
-  .home-search-bar {
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-    border-radius: 20px;
-  }
-
-  .home-search-bar input {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .home-search-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* --- ABOUT SECTION --- */
-  .home-about-section { 
-    margin-top: 0;
-    margin-top: 20px; }
-  .home-about-container { flex-direction: column; }
-  
-  .home-about-left, .home-about-right { width: 100%; }
-  
-  /* Stacking Images */
-  .about-main-img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .about-small-img {
-    position: relative; /* Stop overlapping */
-    bottom: auto; left: auto;
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    margin-top: 20px;
-    transform: none !important;
-  }
-
-  /* Info Card (1000+) */
-  .about-info-card {
-    position: relative;
-    top: auto; right: auto;
-    margin: -30px auto 30px;
-    z-index: 5;
-    width: 90%;
-  }
-
-  .home-about-right { text-align: center; }
-  .about-read-btn { margin: 26px auto 0; }
 
   /* --- TESTIMONIALS --- */
   .testimonial-card {
@@ -1435,7 +1374,7 @@ html {
 /* --- Small Mobile Screens (Max Width: 480px) --- */
 @media (max-width: 480px) {
   /* Typography Adjustments */
-  .home-title, .home-about-right h2, .contact-right h2, .cta-content h2 {
+  .home-title,  .contact-right h2, .cta-content h2 {
     font-size: 28px;
   }
   
@@ -1766,3 +1705,202 @@ html {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   color: #e0b44b;
 }
+/* =========================================
+   MOBILE MEDIA QUERY (Max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  /* 1. SECTION ADJUSTMENTS */
+  .home-about-section {
+    padding: 60px 20px;
+    margin-top: 40px;
+  }
+
+  .home-about-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  /* 2. VERTICAL SEARCH BAR (Matches Image 2) */
+  .home-search-bar {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: -100px auto 50px;
+    padding: 30px 20px;
+    border-radius: 30px;
+    gap: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .home-search-bar input {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #f2c55a;
+    text-align: center;
+  }
+
+  .home-search-btn {
+    width: 100%;
+    justify-content: center;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  /* 3. IMAGE GRID LAYOUT (Matches Image 2) */
+  .home-about-left {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: auto auto;
+    gap: 15px;
+    position: relative;
+  }
+
+/* Top Left Image */
+  .about-main-img {
+    width: 100%; 
+    height: 250px;
+    margin-left: 0;
+    position: static;
+    object-fit: cover;
+    margin-left: -15px;
+    border-radius: 35px;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /* Second Image (Tall Right Side) */
+  .about-small-img {
+    width: 100% !important;
+    height: 380px !important;
+    position: static;
+    margin-top: 90px;
+    object-fit: cover;
+    border-radius: 20px;
+    grid-column: 2;
+    grid-row: 1 / span 2; /* Spans top and bottom */
+  }
+
+  /* Info Card (Floating Badge) */
+  .about-info-card {
+    position: absolute;
+    width: 160px;
+    padding: 12px;
+    top: -20px;
+    right: 10px;
+    z-index: 10;
+    animation: none; /* Disable float on mobile for better UX */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .card-top h3 { font-size: 22px; }
+  .card-text { font-size: 11px; }
+  .avatar-row img { width: 24px; height: 24px; }
+
+  /* 4. CONTENT ADJUSTMENTS */
+  .home-about-right {
+    width: 100%;
+  }
+
+  .home-about-right h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .home-about-right p {
+    max-width: 100%;
+    text-align: left; /* Better readability for long text */
+  }
+
+  .about-read-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 480px) {
+  .home-about-left {
+    grid-template-columns: 1fr 1.2fr;
+  }
+  
+  .about-small-img {
+    height: 320px !important;
+  }
+  
+  .about-info-card {
+    width: 140px;
+    right: 0;
+  }
+  
+}
+/* =========================================
+   FLOATING CONTACT BUTTONS (STICKY)
+   ========================================= */
+.floating-contact {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999; /* Ensure it stays above everything */
+}
+
+.floating-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  animation: floatChat 3s ease-in-out infinite;
+}
+
+/* WhatsApp Specific */
+.whatsapp-btn {
+  background: #25D366;
+}
+
+/* Phone Specific */
+.phone-btn {
+  background: #f2c55a; /* Matches your theme color */
+  animation-delay: 0.5s; /* Staggered animation */
+}
+
+.floating-btn:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ANIMATION: Chatbot-style floating --- */
+@keyframes floatChat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* --- MEDIA QUERY: Mobile Adjustments --- */
+@media (max-width: 768px) {
+  .floating-contact {
+    bottom: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .floating-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
