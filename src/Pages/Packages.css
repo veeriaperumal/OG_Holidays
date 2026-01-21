@@ -161,26 +161,22 @@
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  /* Scale down the entire row slightly so more fits on the mobile screen */
+  .contact-info-row {
+    gap: 20px;
+    padding: 10px;
+    justify-content: flex-start; /* Better for scrolling from the left */
+  }
 
-@media (max-width: 1100px) {
-  .grid { gap: 40px; }
-}
+  .header h1 {
+    font-size: 32px; /* Small header adjustment for mobile */
+  }
 
-@media (max-width: 400px) {
-  .card { 
-    width: 100%; 
-    max-width: 320px; 
-    margin: 0 auto;
+  /* Make sure the map doesn't stack, keep it side-by-side if applicable */
+  .contact-container {
+    display: flex;
+    flex-direction: row !important; 
+    flex-wrap: nowrap;
   }
-  .banner {
-    width: 100%;
-    margin-left: 0;
-    height: 220px;
-  }
-  .grid {
-    gap: 30px;
-    padding: 0 10px;
-  }
-  .header h1 { font-size: 32px; }
 }
