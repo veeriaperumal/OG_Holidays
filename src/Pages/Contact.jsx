@@ -28,7 +28,7 @@ const Contact = () => {
   </a>
 
   {/* Call Us - Changed to anchor tag for functionality */}
-  <a href="tel:+919876543210" className="btn btn-call">
+  <a href="tel:+91 7339358148" className="btn btn-call">
     <div className="icon-wrapper">
       <img src="/images/phone2.png" alt="Call" />
     </div>
@@ -55,25 +55,28 @@ const Contact = () => {
               <img src="/images/phone1.png" alt="Phone" className="info-icon-img" />
               <div className="info-text">
                 <span className="label">PHONE</span>
-                <span className="value">03 5432 1234</span>
+                <span className="value">+91 8754716319</span>
+                <span className="value">+91 7339358148</span>
               </div>
             </div>
 
-            <div className="info-item">
-              {/* References public/images/fax.png */}
-              <img src="/images/fox.png" alt="Fax" className="info-icon-img" />
-              <div className="info-text">
-                <span className="label">FAX</span>
-                <span className="value">03 5432 1234</span>
-              </div>
-            </div>
+            {/* Location Section */}
+  <div className="info-item">
+    <img src="/images/loc.png" alt="Location" className="info-icon-img" />
+    <div className="info-text">
+      <span className="value address-text">
+        1, 6th cross street, Brindavanam,<br />
+        Puducherry - 605013.
+      </span>
+    </div>
+  </div>
 
             <div className="info-item">
               {/* References public/images/email.png */}
               <img src="/images/email.png" alt="Email" className="info-icon-img" />
               <div className="info-text">
                 <span className="label">EMAIL</span>
-                <span className="value">info@marcc.com.au</span>
+                <span className="value">ogholidays7@gmail.com</span>
               </div>
             </div>
           </div>
@@ -109,7 +112,7 @@ const Contact = () => {
   </a>
 
   {/* Phone Icon */}
-  <a href="tel:+91XXXXXXXXXX" className="floating-btn phone-btn">
+  <a href="tel:+91 7339358148" className="floating-btn phone-btn">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>

@@ -29,11 +29,11 @@ export default function Header() {
         <div className="top-left">
           <div className="contact-item">
             <img src="/images/headerp.png" alt="Phone" className="header-icon" />
-            <span>+1 1234567890</span>
+            <span>+91 7339359148</span>
           </div>
           <div className="contact-item">
             <img src="/images/headere.png" alt="Email" className="header-icon" />
-            <span>example@gmail.com</span>
+            <span>ogholidays72gmail@gmail.com</span>
           </div>
         </div>
 

@@ -1,0 +1,186 @@
+.container { 
+  padding-bottom: 50px; 
+  font-family: sans-serif; 
+  text-align: center; 
+  background-color: #fff;
+  overflow-x: hidden; 
+}
+
+.header h1 { 
+  font-size: 48px; 
+  font-weight: 800; 
+  margin-bottom: 10px; 
+  /* Modern Reveal Animation */
+  animation: revealText 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.header p { 
+  color: #666; 
+  max-width: 600px; 
+  margin: 0 auto 40px; 
+  animation: fadeInBlur 1.5s ease-out;
+}
+
+.grid { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 120px; 
+  padding: 0 15px;
+}
+
+.card { 
+  width: 300px; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+  border: 1px solid #eee;
+  /* Smooth Lift Transition */
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Entrance Animation */
+  animation: slideInUp 0.8s ease-out backwards;
+}
+
+/* Staggered loading for cards */
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.4s; }
+
+.card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.banner { 
+  height: 300px;
+  width: 320px; 
+  margin-left: -10px;
+  background-size: cover; 
+  background-position: center;
+  position: relative; 
+  transition: transform 0.6s ease;
+}
+
+/* Subtle image zoom on hover */
+.card:hover .banner {
+  transform: scale(1.1);
+}
+
+.details { padding: 20px; text-align: left; }
+
+.row { 
+  display: flex; 
+  justify-content: space-between; 
+  margin-bottom: 15px; 
+}
+
+.tag { 
+  display: block; 
+  font-size: 11px; 
+  font-weight: 900; 
+}
+
+.price, .price-yellow { 
+  font-size: 22px; 
+  font-weight: 900; 
+  color: #dfb116; 
+}
+
+.right { text-align: right; }
+
+.inc-section { 
+  border-top: 1px solid #eee; 
+  padding-top: 15px; 
+}
+
+.inc-title { 
+  font-size: 14px; 
+  font-weight: 900; 
+  margin-bottom: 15px; 
+}
+
+.inc-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px 5px; 
+}
+
+.inc-item { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  transition: transform 0.3s ease;
+}
+
+.inc-item:hover {
+  transform: translateY(-5px);
+}
+
+.circle { 
+  width: 45px; 
+  height: 45px; 
+  background: #fef3c7; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 5px; 
+  transition: background 0.3s ease;
+}
+
+.inc-item:hover .circle {
+  background: #ffda45;
+}
+
+.circle img { 
+  width: 24px; 
+  height: 24px; 
+  object-fit: contain; 
+}
+
+.inc-item span { 
+  font-size: 9px; 
+  font-weight: 700; 
+  line-height: 1.1; 
+}
+
+/* --- NEW MODERN ANIMATIONS --- */
+
+@keyframes revealText {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInBlur {
+  0% { opacity: 0; filter: blur(10px); }
+  100% { opacity: 1; filter: blur(0); }
+}
+
+@keyframes slideInUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* --- MOBILE RESPONSIVE --- */
+
+@media (max-width: 1100px) {
+  .grid { gap: 40px; }
+}
+
+@media (max-width: 400px) {
+  .card { 
+    width: 100%; 
+    max-width: 320px; 
+    margin: 0 auto;
+  }
+  .banner {
+    width: 100%;
+    margin-left: 0;
+    height: 220px;
+  }
+  .grid {
+    gap: 30px;
+    padding: 0 10px;
+  }
+  .header h1 { font-size: 32px; }
+}

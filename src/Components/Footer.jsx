@@ -43,9 +43,9 @@ export default function Footer() {
             <ul>
               <li onClick={() => scrollToSection("about")}>About Us</li>
               <li onClick={() => scrollToSection("/services")}>Services</li>
-              <li onClick={() => scrollToSection("packages")}>Packages</li>
+              <li onClick={() => scrollToSection("/packages")}>Packages</li>
               <li onClick={() => scrollToSection("testimonials")}>Testimonials</li>
-              <li onClick={() => scrollToSection("contact")}>Contact Us</li>
+              <li onClick={() => scrollToSection("/contact")}>Contact Us</li>
               <li onClick={() => scrollToSection("destinations")}>Destinations</li>
             </ul>
           </div>
@@ -61,7 +61,8 @@ export default function Footer() {
         alt="Phone"
         className="footer-contact-icon"
       />
-      <p className="footer-contact-text">+1 12345 67890</p>
+      <p className="footer-contact-text">+91 8754716319
+        +91 7339358148</p>
     </div>
 
     {/* Email */}
@@ -71,7 +72,7 @@ export default function Footer() {
         alt="Email"
         className="footer-contact-icon"
       />
-      <p className="footer-contact-text">example@gmail.com</p>
+      <p className="footer-contact-text">ogholidays72gmail@gmail.com</p>
     </div>
 
     {/* Location */}
