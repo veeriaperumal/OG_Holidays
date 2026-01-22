@@ -385,7 +385,7 @@ export default function Home() {
 
       <div className="contact-item">
         <div className="contact-icon">
-          {/* <img src="/images/icon-price.png" alt="Best Price" /> */}
+          <img src="/images/price.png" alt="Best Price" />
         </div>
         <div>
           <h4>Best Price Guarantee</h4>
@@ -398,7 +398,7 @@ export default function Home() {
 
       <div className="contact-item">
         <div className="contact-icon">
-          {/* <img src="/images/icon-destination.png" alt="Destinations" /> */}
+          <img src="/images/desti.png" alt="Destinations" />
         </div>
         <div>
           <h4>Wide Destination Choice</h4>
