@@ -1,6 +1,8 @@
 import "./Home.css";
 import { Send, ArrowLeft, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -74,6 +76,7 @@ export default function Home() {
    const [index, setIndex] = useState(0);
   const [active, setActive] = useState(0);
   const current = testimonials[index];
+  const navigate = useNavigate();
 
   // --- 1. SCROLL FUNCTION ---
   const scrollToSection = (id) => {
@@ -404,10 +407,9 @@ export default function Home() {
           </div>
         </div>
 <button
+  type="button"
   className="contact__btn"
-  onClick={() => {
-    window.location.href = "/contact";
-  }}
+  onClick={() => navigate("/contact")}
 >
   Contact Now
 </button>
@@ -467,10 +469,9 @@ export default function Home() {
         From domestic escapes to international adventures,
         we plan every detail with care
       </p>
-
-      <button
+<button
   className="cta-btn"
-  onClick={() => window.location.href = "/contact"}
+  onClick={() => navigate("/contact")}
 >
   Book Now <span>→</span>
 </button>
