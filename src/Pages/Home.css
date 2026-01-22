@@ -879,25 +879,79 @@ html {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(242, 197, 90, 0.6);
 }
+/* =========================================
+   CONTACT SECTION – MOBILE 2 SPAN VIEW
+   Image LEFT | Content RIGHT
+========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+
+  .contact-section {
+    padding: 40px 12px;
+  }
+
+  /* Two-column layout */
   .contact-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: 120px 2fr; /* image | content */
+    gap: 16px;
+    align-items: flex-start;
   }
+
+  /* IMAGE LEFT */
   .contact-left {
+    display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
+
+  .contact-phone-img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    margin-left: 20px;
+    margin-top: -340px;
+    
+  }
+
+  /* CONTENT RIGHT */
   .contact-right {
-    align-items: center;
-  }
-  .contact-item {
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: 16px;
+  }
+
+  .contact-right h2 {
+    font-size: 34px;
+    margin-bottom: 300px;
+    text-align: left;
+  }.contacttitle{
+    justify-self: center;
+    margin-left: -40px;
+  }
+
+  .contact-item {
+    gap: 10px;
+   margin-left: -40px; 
+  }
+
+  .contact-item:hover {
+    transform: none;
+  }
+
+  .contact-item p {
+    max-width: 100%;
+    font-size: 13px;
+  }
+
+  .contact-btn {
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
+
 
 /* =========================================
    LOVE SECTION
@@ -1255,7 +1309,6 @@ html {
   .home,
   .testimonial-section,
   .stats-section,
-  .contact-section,
   .love-section,
   .faq-section,
   .footer-section {
@@ -1316,21 +1369,6 @@ html {
       height: 80px;
      }  
 
-
-
-  /* --- CONTACT --- */
-  .contact-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-  
-  .contact-left { justify-content: center; }
-  .contact-right { align-items: center; }
-  .contact-item { flex-direction: column; text-align: center; }
-  
-  .contact-phone-img { width: 80%; max-width: 300px; }
-
   /* --- LOVE SECTION --- */
   .love-container {
     flex-direction: column; /* Stack images above text */
@@ -1374,7 +1412,7 @@ html {
 /* --- Small Mobile Screens (Max Width: 480px) --- */
 @media (max-width: 480px) {
   /* Typography Adjustments */
-  .home-title,  .contact-right h2, .cta-content h2 {
+  .home-title {
     font-size: 28px;
   }
   
@@ -1387,7 +1425,7 @@ html {
   
   .contact-icon { width: 45px; height: 45px; min-width: 45px; }
   
-  .call-btn, .contact-btn, .cta-btn {
+  .call-btn, .cta-btn {
     width: 100%; /* Full width buttons */
     justify-content: center;
   }
@@ -1477,109 +1515,10 @@ html {
     gap: 30px;
   }
 }
-/* =========================================
-   MOBILE RESPONSIVE MEDIA QUERIES (Contact Section)
-   (Paste at the bottom of your CSS file)
-========================================= */
-
-/* --- Tablet & Small Laptops (Max Width: 1024px) --- */
-@media (max-width: 1024px) {
-  .contact-container {
-    gap: 50px; /* Reduce gap between image and text */
-    max-width: 90%;
-  }
-
-  .contact-right h2 {
-    font-size: 32px; /* Slightly smaller heading */
-  }
-}
-
-/* --- Mobile Breakpoint (Max Width: 900px) --- */
-@media (max-width: 900px) {
-  .contact-section {
-    padding: 60px 20px; /* Reduce vertical padding */
-  }
-
-  /* Stack everything vertically */
-  .contact-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  /* Center the image area */
-  .contact-left {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .contact-phone-img {
-    max-width: 280px; /* Resize image for tablet/mobile */
-  }
-
-  /* Center the content area */
-  .contact-right {
-    align-items: center; /* Center flex items horizontally */
-    width: 100%;
-    gap: 30px;
-  }
-
-  /* Stack Icon above Text */
-  .contact-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-  }
-
-  /* Remove hover movement on mobile to prevent stickiness */
-  .contact-item:hover {
-    transform: none;
-  }
-  
-  .contact-item p {
-    max-width: 100%; /* Allow text to use full width */
-  }
-}
 
 /* --- Small Mobile Screens (Max Width: 480px) --- */
 @media (max-width: 480px) {
-  .contact-section {
-    padding: 50px 20px;
-  }
 
-  .contact-right h2 {
-    font-size: 28px; /* Smaller heading for phones */
-  }
-
-  /* Adjust Icon Size */
-  .contact-icon {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-  }
-
-  .contact-icon img {
-    width: 26px; /* Adjust internal image size if needed */
-    height: 26px;
-  }
-
-  .contact-item h4 {
-    font-size: 17px;
-  }
-
-  .contact-item p {
-    font-size: 13px;
-  }
-
-  /* Make button full width for easier tapping */
-  .contact-btn {
-    width: 100%; 
-    display: flex;
-    justify-content: center;
-    padding: 14px 20px;
-    font-size: 15px;
-  }
   .newsletter-box {
     flex-direction: column;
     text-align: center;
@@ -1606,6 +1545,7 @@ html {
   }
   
 }
+
 /* =========================================
    MOBILE RESPONSIVE MEDIA QUERIES (Newsletter)
    (Paste at the bottom of your CSS file)

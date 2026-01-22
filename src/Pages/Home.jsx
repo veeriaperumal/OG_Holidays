@@ -368,7 +368,7 @@ export default function Home() {
 
     {/* RIGHT – CONTENT */}
     <div className="contact-right">
-      <h2>Contact Us</h2>
+      <h2 className="contacttitle">Contact Us</h2>
 
       <div className="contact-item">
         <div className="contact-icon">

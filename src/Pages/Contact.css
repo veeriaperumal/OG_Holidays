@@ -286,67 +286,6 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Mobile & Tablet Responsiveness */
-@media (max-width: 1024px) {
-  /* Container Fix */
-  .contact-container {
-    flex-direction: column;
-    padding: 40px 20px;
-    gap: 40px;
-    text-align: center;
-  }
-
-  /* Info Row Fix: Remove the negative margin and center items */
-  .contact-info-row {
-    flex-direction: column;
-    margin-left: 0; /* Resetting the offset for mobile */
-    align-items: center; /* Centering items for mobile */
-    gap: 30px;
-    width: 100%;
-  }
-
-  .info-item {
-    width: auto; /* Allow text to breathe */
-    max-width: 300px;
-    justify-content: flex-start;
-    text-align: left; /* Keep text aligned to the left of the icon */
-  }
-
-  /* Value text fix for smaller screens */
-  .info-text .value {
-    width: auto; /* Remove the fixed 180px width */
-    max-width: 250px;
-  }
-
-  /* Map and Badge Adjustments */
-  .location-badge {
-    font-size: 1.1rem;
-    padding: 10px 25px;
-    bottom: 15px;
-  }
-
-  .btn {
-    width: 100%;
-    font-size: 1.1rem;
-  }
-}
-
-/* Specific fix for very small phones */
-@media (max-width: 480px) {
-  .info-item {
-    gap: 10px;
-  }
-  
-  .info-icon-img {
-    width: 25px;
-    height: 25px;
-  }
-
-  .info-text .value {
-    font-size: 0.85rem;
-  }
-}
-
 /* ============================
    MODERN KEYFRAME ANIMATIONS
 ============================ */
@@ -411,7 +350,7 @@
   .contact-left {
     align-items: center;
     text-align: center;
-    margin-left: 50px;
+    margin-left: 40px;
     width: 100%;
   }
 
@@ -463,7 +402,7 @@
   .contact-info-row {
     flex-direction: column;
     align-items: center;
-    margin-top: 300px;
+    margin-top: 450px;
     gap: 80px;
   }
 
@@ -471,6 +410,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-left: 70px;
     
   }
 
@@ -478,12 +418,11 @@
   .contact-right {
     width: 100%;
     margin-left: -250px;
-    margin-top: 80px;
+    margin-top: 50px;
   }
 
   .map-wrapper {
     width: 100%;
-    margin-left: -95px;
   }
 
   .location-badge {
@@ -521,6 +460,10 @@
   /* Center text since icon is now relative */
   .btn-text {
     margin-right: 0;
+  }
+  .map-wrapper {
+    width: 100%;
+    margin-left: -80px;
   }
 
   .location-badge {
