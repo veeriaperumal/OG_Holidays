@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* =========================
-   ANIMATION KEYFRAMES
-========================= */
-@keyframes fadeInUp {
+* {
+  box-sizing: border-box;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -14,154 +16,61 @@
   }
 }
 
-/* =========================
-   SERVICES HERO
-========================= */
-.services-hero {
-  width: 100%;
-  padding: 90px 20px 80px;
-  background: #fffaf2; /* light cream background */
-  text-align: center;
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-/* TITLE */
+/* ================= HERO ================= */
+.services-hero {
+  padding: 90px 20px 60px;
+  background: #fffaf2;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
 .services-hero h1 {
   font-size: 40px;
   font-weight: 800;
-  color: #000;
   margin-bottom: 16px;
-  
-  /* ANIMATION */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeUp 0.8s ease forwards;
 }
 
-/* SUBTITLE */
 .services-hero p {
   font-size: 14.5px;
   color: #555;
-  line-height: 1.7;
   max-width: 720px;
-  margin: 0 auto;
-
-  /* ANIMATION */
+  margin: 0 auto 50px;
+  line-height: 1.7;
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.2s;
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.2s forwards; /* 0.2s delay */
 }
 
-/* =========================
-   DOMESTIC SECTION
-========================= */
-.domestic-section {
-  background: #fffaf2;
-  padding: 60px 80px 80px;
-  text-align: center;
-}
-
-/* TOP PILL */
-.domestic-pill {
+/* ================= PILL ================= */
+.domestic-pill,
+.international-pill,
+.group-pill {
   display: inline-block;
   background: #000;
   color: #f4c75a;
-  padding: 10px 26px;
+  padding: 10px 28px;
   border-radius: 40px;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 600;
   margin-bottom: 40px;
-
-  /* ANIMATION */
+  animation: fadeUp 0.8s ease forwards;
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.3s forwards;
-  transition: transform 0.3s ease;
 }
 
-.domestic-pill:hover {
-  transform: scale(1.05);
-}
-
-/* GRID */
-.domestic-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* CARD */
-.domestic-card {
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  
-  /* ANIMATION & TRANSITION */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-/* Hover Effect: Lift Card */
-.domestic-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-}
-
-/* IMAGE */
-.domestic-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-/* Hover Effect: Zoom Image */
-.domestic-card:hover img {
-  transform: scale(1.05);
-}
-
-/* TITLE */
-.domestic-card p {
-  padding: 14px 0;
-  font-size: 15px;
-  font-weight: 700;
-  color: #000;
-  letter-spacing: 0.6px;
-}
-
-/* =========================
-   INTERNATIONAL SECTION
-========================= */
-.international-section {
-  background: #fffaf2;
-  padding: 80px 80px 100px;
-  text-align: center;
-}
-
-/* TOP PILL */
-.international-pill {
-  display: inline-block;
-  background: #000;
-  color: #f4c75a;
-  padding: 10px 30px;
-  border-radius: 40px;
-  font-size: 50px;
-  font-weight: 600;
-  margin-bottom: 40px;
-
-  /* ANIMATION */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  transition: transform 0.3s ease;
-}
-
-.international-pill:hover {
-  transform: scale(1.05);
-}
-
-/* GRID */
+/* ================= GRID ================= */
+.domestic-grid,
 .international-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -170,27 +79,60 @@
   margin: auto;
 }
 
-/* CARD */
-.international-card {
-  background: #ffffff;
+.international-center-grid,
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 280px);
+  gap: 32px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* ================= CARD ================= */
+.domestic-card,
+.international-card,
+.group-card {
+  background: #fff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  
-  /* ANIMATION & TRANSITION */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  opacity: 0;
+  animation: fadeScale 0.8s ease forwards;
 }
 
-.international-card:hover {
+/* STAGGERED CARD ANIMATION */
+.domestic-card:nth-child(1),
+.international-card:nth-child(1),
+.group-card:nth-child(1) { animation-delay: 0.1s; }
+
+.domestic-card:nth-child(2),
+.international-card:nth-child(2),
+.group-card:nth-child(2) { animation-delay: 0.2s; }
+
+.domestic-card:nth-child(3),
+.international-card:nth-child(3),
+.group-card:nth-child(3) { animation-delay: 0.3s; }
+
+.domestic-card:nth-child(4),
+.international-card:nth-child(4) { animation-delay: 0.4s; }
+
+.domestic-card:nth-child(5) { animation-delay: 0.5s; }
+.domestic-card:nth-child(6) { animation-delay: 0.6s; }
+.domestic-card:nth-child(7) { animation-delay: 0.7s; }
+.domestic-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Hover Lift */
+.domestic-card:hover,
+.international-card:hover,
+.group-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* IMAGE */
-.international-card img {
+/* 🔥 SAME IMAGE SIZE + HOVER ZOOM */
+.domestic-card img,
+.international-card img,
+.group-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
@@ -198,298 +140,90 @@
   transition: transform 0.5s ease;
 }
 
-.international-card:hover img {
-  transform: scale(1.05);
-}
-
-/* TITLE */
-.international-card p {
-  padding: 14px 0;
-  font-size: 15px;
-  font-weight: 700;
-  color: #000;
-  letter-spacing: 0.6px;
-}
-
-/* =========================
-   INTERNATIONAL CENTER ROW
-========================= */
-
-/* GRID – 3 items centered */
-.international-center-grid {
-  display: grid;
-  margin-top: 30px;
-  grid-template-columns: repeat(3, 280px);
-  gap: 32px;
-  justify-content: center;
-}
-
-/* (The international-card styles above apply here automatically) */
-
-/* =========================
-   GROUP TRAVEL SECTION
-========================= */
-.group-section {
-  background: #fffaf2;
-  padding: 80px 80px 100px;
-  text-align: center;
-}
-
-/* TOP PILL */
-.group-pill {
-  display: inline-block;
-  background: #000;
-  color: #f4c75a;
-  padding: 10px 30px;
-  border-radius: 40px;
-  font-size: 50px;
-  font-weight: 600;
-  margin-bottom: 40px;
-
-  /* ANIMATION */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  transition: transform 0.3s ease;
-}
-
-.group-pill:hover {
-  transform: scale(1.05);
-}
-
-/* GRID – 3 CARDS CENTERED */
-.group-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 280px);
-  gap: 32px;
-  justify-content: center;
-}
-
-/* CARD */
-.group-card {
-  background: #ffffff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  
-  /* ANIMATION & TRANSITION */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.group-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-}
-
-/* IMAGE */
-.group-card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
+.domestic-card:hover img,
+.international-card:hover img,
 .group-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 /* TITLE */
+.domestic-card p,
+.international-card p,
 .group-card p {
   padding: 14px 0;
   font-size: 15px;
   font-weight: 700;
-  color: #000;
-  letter-spacing: 0.6px;
 }
 
-/* =========================
-   STAGGERED DELAYS (Waterfall Effect)
-   This applies to all cards in grids
-========================= */
-.domestic-card:nth-child(1), .international-card:nth-child(1), .group-card:nth-child(1) { animation-delay: 0.1s; }
-.domestic-card:nth-child(2), .international-card:nth-child(2), .group-card:nth-child(2) { animation-delay: 0.2s; }
-.domestic-card:nth-child(3), .international-card:nth-child(3), .group-card:nth-child(3) { animation-delay: 0.3s; }
-.domestic-card:nth-child(4), .international-card:nth-child(4) { animation-delay: 0.4s; }
-.domestic-card:nth-child(5) { animation-delay: 0.5s; }
-.domestic-card:nth-child(6) { animation-delay: 0.6s; }
-.domestic-card:nth-child(7) { animation-delay: 0.7s; }
-.domestic-card:nth-child(8) { animation-delay: 0.8s; }
-/* =========================================
-   MOBILE RESPONSIVE MEDIA QUERIES (Services Page)
-   (Paste at the bottom of your CSS file)
-========================================= */
+/* ================= SECTIONS ================= */
+.domestic-section,
+.international-section,
+.group-section {
+  padding: 60px 20px;
+}
 
-/* --- Tablet & Small Laptops (Max Width: 1024px) --- */
+/* ================= TABLET ================= */
 @media (max-width: 1024px) {
-  
-  /* Adjust Grids to 2 Columns */
-  .domestic-grid, 
+  .domestic-grid,
   .international-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 0 20px;
   }
 
-  /* Center Grid for tablets */
   .international-center-grid,
   .group-grid {
     grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    justify-content: center;
-    gap: 20px;
   }
 
-  /* Reduce Side Padding */
-  .domestic-section,
-  .international-section,
-  .group-section {
-    padding: 60px 20px;
+  .domestic-card img,
+  .international-card img,
+  .group-card img {
+    height: 200px;
   }
 }
 
-/* --- Mobile Breakpoint (Max Width: 768px) --- */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-
-  /* 1. HERO SECTION */
-  .services-hero {
-    padding: 60px 20px 40px;
-  }
-
   .services-hero h1 {
-    font-size: 32px; /* Smaller Title */
+    font-size: 30px;
   }
 
-  /* 2. PILL TITLES (Domestic, International, Group) */
   .domestic-pill,
   .international-pill,
   .group-pill {
-    font-size: 28px; /* Reduce from 50px to prevent overflow */
-    padding: 10px 20px;
-    white-space: nowrap; /* Keep text on one line if possible */
+    font-size: 26px;
   }
 
-  /* 3. GRIDS (Stack to 1 Column) */
   .domestic-grid,
   .international-grid,
   .international-center-grid,
   .group-grid {
-    grid-template-columns: 1fr; /* Single column layout */
-    max-width: 400px; /* Limit width for better look */
-    margin: 0 auto; /* Center the grid */
-    gap: 24px;
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin: auto;
   }
 
-  /* 4. SECTIONS PADDING */
-  .domestic-section,
-  .international-section,
-  .group-section {
-    padding: 40px 15px; /* Tighter padding for mobile */
-  }
-
-  /* 5. CARD ADJUSTMENTS */
   .domestic-card img,
   .international-card img,
   .group-card img {
-    height: 200px; /* Slightly shorter images */
-  }
-
-  /* Center the pills if they aren't already */
-  .domestic-section, 
-  .international-section, 
-  .group-section {
-    text-align: center;
+    height: 190px;
   }
 }
 
-/* --- Small Mobile Screens (Max Width: 480px) --- */
+/* ================= SMALL MOBILE ================= */
 @media (max-width: 480px) {
   .services-hero h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
-  .domestic-pill,
-  .international-pill,
-  .group-pill {
-    font-size: 22px; /* Even smaller for very small screens */
-    padding: 8px 16px;
+  .domestic-card img,
+  .international-card img,
+  .group-card img {
+    height: 170px;
   }
-  
+
   .domestic-card p,
   .international-card p,
   .group-card p {
     font-size: 14px;
-  }
-}
-
-/* =========================================
-   FLOATING CONTACT BUTTONS (STICKY)
-   ========================================= */
-.floating-contact {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 9999; /* Ensure it stays above everything */
-}
-
-.floating-btn {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  animation: floatChat 3s ease-in-out infinite;
-}
-
-/* WhatsApp Specific */
-.whatsapp-btn {
-  background: #25D366;
-}
-
-/* Phone Specific */
-.phone-btn {
-  background: #f2c55a; /* Matches your theme color */
-  animation-delay: 0.5s; /* Staggered animation */
-}
-
-.floating-btn:hover {
-  transform: scale(1.1) translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* --- ANIMATION: Chatbot-style floating --- */
-@keyframes floatChat {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-/* --- MEDIA QUERY: Mobile Adjustments --- */
-@media (max-width: 768px) {
-  .floating-contact {
-    bottom: 20px;
-    right: 20px;
-    gap: 10px;
-  }
-
-  .floating-btn {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .floating-btn svg {
-    width: 24px;
-    height: 24px;
   }
 }

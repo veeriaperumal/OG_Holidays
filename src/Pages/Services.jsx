@@ -11,112 +11,79 @@ export default function Services() {
         designed to make every trip smooth and memorable
       </p>
 
+      {/* ================= DOMESTIC ================= */}
       <section className="domestic-section">
-  <div className="domestic-pill">Domestic</div>
+        <div className="domestic-pill">Domestic</div>
 
-  <div className="domestic-grid">
-    <div className="domestic-card">
-      <img src="/images/goa.png" alt="Goa" />
-      <p>GOA</p>
-    </div>
+        <div className="domestic-grid">
+          {[
+            { img: "goa.png", name: "GOA" },
+            { img: "manali.png", name: "MANALI" },
+            { img: "shimla.png", name: "SHIMLA" },
+            { img: "shirdi.png", name: "SHIRDI" },
+            { img: "delhi.png", name: "DELHI" },
+            { img: "pondicherry.png", name: "PONDICHERRY" },
+            { img: "agra.png", name: "AGRA" },
+            { img: "jaipur.png", name: "JAIPUR" },
+          ].map((item, i) => (
+            <div className="domestic-card" key={i}>
+              <img src={`/images/${item.img}`} alt={item.name} />
+              <p>{item.name}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-    <div className="domestic-card">
-      <img src="/images/manali.png" alt="Manali" />
-      <p>MANALI</p>
-    </div>
+      {/* ================= INTERNATIONAL ================= */}
+      <section className="international-section">
+        <div className="international-pill">International</div>
 
-    <div className="domestic-card">
-      <img src="/images/shimla.png" alt="Shimla" />
-      <p>SHIMLA</p>
-    </div>
+        <div className="international-grid">
+          {[
+            { img: "thailand.png", name: "THAILAND" },
+            { img: "singapore.png", name: "SINGAPORE" },
+            { img: "malayasia.png", name: "MALAYSIA" },
+            { img: "vietnam.png", name: "VIETNAM" },
+          ].map((item, i) => (
+            <div className="international-card" key={i}>
+              <img src={`/images/${item.img}`} alt={item.name} />
+              <p>{item.name}</p>
+            </div>
+          ))}
+        </div>
 
-    <div className="domestic-card">
-      <img src="/images/shirdi.png" alt="Shirdi" />
-      <p>SHIRDI</p>
-    </div>
-     <div className="domestic-card">
-      <img src="/images/delhi.png" alt="Delhi" />
-      <p>DELHI</p>
-    </div>
+        <div className="international-center-grid">
+          {[
+            { img: "bali.png", name: "BALI" },
+            { img: "dubai.png", name: "DUBAI" },
+            { img: "srilanka.png", name: "SRI LANKA" },
+          ].map((item, i) => (
+            <div className="international-card" key={i}>
+              <img src={`/images/${item.img}`} alt={item.name} />
+              <p>{item.name}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-    <div className="domestic-card">
-      <img src="/images/pondicherry.png" alt="Pondicherry" />
-      <p>PONDICHERRY</p>
-    </div>
+      {/* ================= GROUP ================= */}
+      <section className="group-section">
+        <div className="group-pill">Group Travel</div>
 
-    <div className="domestic-card">
-      <img src="/images/agra.png" alt="Agra" />
-      <p>AGRA</p>
-    </div>
-
-    <div className="domestic-card">
-      <img src="/images/jaipur.png" alt="Jaipur" />
-      <p>JAIPUR</p>
-    </div>
-  </div>
-</section>
-<section className="international-section">
-  <div className="international-pill">International</div>
-
-  <div className="international-grid">
-    <div className="international-card">
-      <img src="/images/thailand.png" alt="Thailand" />
-      <p>THAILAND</p>
-    </div>
-
-    <div className="international-card">
-      <img src="/images/singapore.png" alt="Singapore" />
-      <p>SINGAPORE</p>
-    </div>
-
-    <div className="international-card">
-      <img src="/images/malayasia.png" alt="Malaysia" />
-      <p>MALAYASIA</p>
-    </div>
-
-    <div className="international-card">
-      <img src="/images/vietnam.png" alt="Vietnam" />
-      <p>VIETNAM</p>
-    </div>
-    
-  </div>
-  <div className="international-center-grid">
-    <div className="international-card">
-      <img src="/images/bali.png" alt="Bali" />
-      <p>BALI</p>
-    </div>
-
-    <div className="international-card">
-      <img src="/images/dubai.png" alt="Dubai" />
-      <p>DUBAI</p>
-    </div>
-
-    <div className="international-card">
-      <img src="/images/srilanka.png" alt="Sri Lanka" />
-      <p>SRI LANKA</p>
-    </div>
-  </div>
-</section>
-<section className="group-section">
-  <div className="group-pill">Group Travel</div>
-
-  <div className="group-grid">
-    <div className="group-card">
-      <img src="/images/collegeiv.png" alt="College IV" />
-      <p>COLLEGE IV</p>
-    </div>
-
-    <div className="group-card">
-      <img src="/images/corporate.png" alt="Corporate" />
-      <p>CORPORATE</p>
-    </div>
-
-    <div className="group-card">
-      <img src="/images/spirituaktour.png" alt="Spiritual Tour" />
-      <p>SPIRITUAL TOUR</p>
-    </div>
-  </div>
-          {/* STICKY CONTACT BUTTONS */}
+        <div className="group-grid">
+          {[
+            { img: "collegeiv.png", name: "COLLEGE IV" },
+            { img: "corporate.png", name: "CORPORATE" },
+            { img: "spirituaktour.png", name: "SPIRITUAL TOUR" },
+          ].map((item, i) => (
+            <div className="group-card" key={i}>
+              <img src={`/images/${item.img}`} alt={item.name} />
+              <p>{item.name}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+                    {/* STICKY CONTACT BUTTONS */}
 <div className="floating-contact">
   {/* WhatsApp Icon */}
   <a 
@@ -131,18 +98,12 @@ export default function Services() {
   </a>
 
   {/* Phone Icon */}
-  <a href="tel:+91XXXXXXXXXX" className="floating-btn phone-btn">
+  <a href="tel:+917339358148" className="floating-btn phone-btn">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   </a>
 </div>
-</section>
-
-
-
-
     </section>
-    
   );
 }

@@ -10,7 +10,7 @@ export default function Footer() {
     {/* BRAND */}
     <div className="footer-brand">
       <h2>
-        <span>OG</span> Holidays
+        <span>OG</span> HOLIDAYS
       </h2>
       <p>
         Delivering perfect holidays <br />

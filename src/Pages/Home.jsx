@@ -2,6 +2,9 @@ import "./Home.css";
 import { Send, ArrowLeft, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
+
+
+
 const testimonials = [
   {
     name: "Arjun & Meera",
@@ -336,7 +339,7 @@ export default function Home() {
     {/* CARD 2 */}
     <div className="stat-card">
       <div className="stat1">
-        <img src="/images/stat1.png" alt="Travellers" />
+        <img src="/images/stat2.png" alt="Travellers" />
       </div>
       <h3>1000+</h3>
       <p>
@@ -347,7 +350,7 @@ export default function Home() {
     {/* CARD 3 */}
     <div className="stat-card">
       <div className="stat1">
-        <img src="/images/stat1.png" alt="Satisfaction" />
+        <img src="/images/stat3.png" alt="Satisfaction" />
       </div>
       <h3>+98%</h3>
       <p>Customer Satisfaction Rate</p>
@@ -355,57 +358,64 @@ export default function Home() {
   </div>
 </section>
 
-<section id="contact" className="contact">
-  <div className="contact__container">
+  <section id="contact" className="contact">
+    <div className="contact__container">
 
-    {/* IMAGE */}
-    <div className="contact__image">
-      <img
-        src="/images/phone.png"
-        alt="OG Holidays App"
-        className="contact__image-img"
-      />
+      {/* IMAGE */}
+      <div className="contact__image">
+        <img
+          src="/images/phone.png"
+          alt="OG Holidays App"
+          className="contact__image-img"
+        />
+      </div>
+
+      {/* CONTENT */}
+      <div className="contact__content">
+        <h2 className="contact__title">Contact Us</h2>
+
+        <div className="contact__item">
+          <div className="contact__icon">
+            <img src="/images/support.png" alt="Support" />
+          </div>
+          <div>
+            <h4>Customer Support</h4>
+            <p>Get 24/7 assistance for all your travel needs</p>
+          </div>
+        </div>
+
+        <div className="contact__item">
+          <div className="contact__icon">
+            <img src="/images/price.png" alt="Best Price" />
+          </div>
+          <div>
+            <h4>Best Price Guarantee</h4>
+            <p>Enjoy competitive prices and exclusive offers</p>
+          </div>
+        </div>
+
+        <div className="contact__item">
+          <div className="contact__icon">
+            <img src="/images/desti.png" alt="Destinations" />
+          </div>
+          <div>
+            <h4>Wide Destination Choice</h4>
+            <p>Choose from stunning global destinations</p>
+          </div>
+        </div>
+<button
+  className="contact__btn"
+  onClick={() => {
+    window.location.href = "/contact";
+  }}
+>
+  Contact Now
+</button>
+
+      </div>
+
     </div>
-
-    {/* CONTENT */}
-    <div className="contact__content">
-      <h2 className="contact__title">Contact Us</h2>
-
-      <div className="contact__item">
-        <div className="contact__icon">
-          <img src="/images/support.png" alt="Support" />
-        </div>
-        <div>
-          <h4>Customer Support</h4>
-          <p>Get 24/7 assistance for all your travel needs</p>
-        </div>
-      </div>
-
-      <div className="contact__item">
-        <div className="contact__icon">
-          <img src="/images/price.png" alt="Best Price" />
-        </div>
-        <div>
-          <h4>Best Price Guarantee</h4>
-          <p>Enjoy competitive prices and exclusive offers</p>
-        </div>
-      </div>
-
-      <div className="contact__item">
-        <div className="contact__icon">
-          <img src="/images/desti.png" alt="Destinations" />
-        </div>
-        <div>
-          <h4>Wide Destination Choice</h4>
-          <p>Choose from stunning global destinations</p>
-        </div>
-      </div>
-
-      <button className="contact__btn">Contact Now</button>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 <section className="love-section">
   <div className="love-container">
@@ -458,9 +468,13 @@ export default function Home() {
         we plan every detail with care
       </p>
 
-      <button className="cta-btn">
-        Book Now <span>→</span>
-      </button>
+      <button
+  className="cta-btn"
+  onClick={() => window.location.href = "/contact"}
+>
+  Book Now <span>→</span>
+</button>
+
     </div>
   </div>
 </section>
@@ -492,19 +506,34 @@ export default function Home() {
           </div>
         ))}
       </div>
-  {/* NEWSLETTER BOX */}
-      <div className="newsletter-container">
-        <div className="newsletter-box">
-          <h3>
-            Subscribe for <br /> Latest Newsletter
-          </h3>
+ {/* NEWSLETTER SECTION */}
+<section className="newsletter">
+  <div className="newsletter__container">
+    <div className="newsletter__box">
+      
+      <h3 className="newsletter__title">
+        Subscribe for <br /> Latest Newsletter
+      </h3>
 
-          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Your Email Address" required />
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-        </div>
+      <form
+        className="newsletter__form"
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <input
+          type="email"
+          className="newsletter__input"
+          placeholder="Your Email Address"
+          required
+        />
+        <button type="submit" className="newsletter__btn">
+          Subscribe
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
         {/* STICKY CONTACT BUTTONS */}
 <div className="floating-contact">
   {/* WhatsApp Icon */}
