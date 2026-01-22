@@ -355,64 +355,58 @@ export default function Home() {
   </div>
 </section>
 
-<section id="contact" className="contact-section">
-  <div className="contact-container">
-    {/* LEFT – PHONE IMAGE */}
-    <div className="contact-left">
+<section id="contact" className="contact">
+  <div className="contact__container">
+
+    {/* IMAGE */}
+    <div className="contact__image">
       <img
         src="/images/phone.png"
         alt="OG Holidays App"
-        className="contact-phone-img"
+        className="contact__image-img"
       />
     </div>
 
-    {/* RIGHT – CONTENT */}
-    <div className="contact-right">
-      <h2 className="contacttitle">Contact Us</h2>
+    {/* CONTENT */}
+    <div className="contact__content">
+      <h2 className="contact__title">Contact Us</h2>
 
-      <div className="contact-item">
-        <div className="contact-icon">
+      <div className="contact__item">
+        <div className="contact__icon">
           <img src="/images/support.png" alt="Support" />
         </div>
         <div>
           <h4>Customer Support</h4>
-          <p>
-            Get 24/7 assistance for all your travel needs with quick and
-            reliable support
-          </p>
+          <p>Get 24/7 assistance for all your travel needs</p>
         </div>
       </div>
 
-      <div className="contact-item">
-        <div className="contact-icon">
+      <div className="contact__item">
+        <div className="contact__icon">
           <img src="/images/price.png" alt="Best Price" />
         </div>
         <div>
           <h4>Best Price Guarantee</h4>
-          <p>
-            Enjoy the best deals with competitive prices and exclusive travel
-            offers
-          </p>
+          <p>Enjoy competitive prices and exclusive offers</p>
         </div>
       </div>
 
-      <div className="contact-item">
-        <div className="contact-icon">
+      <div className="contact__item">
+        <div className="contact__icon">
           <img src="/images/desti.png" alt="Destinations" />
         </div>
         <div>
           <h4>Wide Destination Choice</h4>
-          <p>
-            Choose from a wide range of stunning global destinations tailored
-            to your travel style
-          </p>
+          <p>Choose from stunning global destinations</p>
         </div>
       </div>
 
-      <button className="contact-btn">Contact Now</button>
+      <button className="contact__btn">Contact Now</button>
     </div>
+
   </div>
 </section>
+
 <section className="love-section">
   <div className="love-container">
     {/* LEFT – IMAGE GRID */}
