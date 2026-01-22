@@ -1,542 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-/* Main Layout */
-.contact-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden; 
-}
-
-.contact-container {
-  display: flex;
-  width: 90%;
-  max-width: 1200px;
-  gap: 50px;
-  z-index: 2; 
-}
-
-/* Left Column Styling */
-.contact-left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.contact-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #000;
-  
-  /* ANIMATION */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.contact-subtitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 3rem;
-  color: #000;
-  max-width: 90%;
-
-  /* ANIMATION */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.2s forwards;
-}
-
-/* CONTAINER */
-.contact-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 4rem;
-  width: 100%;
-  max-width: 400px; /* Limits width so buttons aren't huge */
-  
-  /* Animation */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.4s forwards;
-}
-
-/* SHARED BUTTON STYLES */
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Aligns content to the left */
-  padding: 12px 20px;
-  border-radius: 50px; /* Rounded pill shape */
-  text-decoration: none; /* REMOVES UNDERLINE */
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #fff; /* Text color */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-  cursor: pointer;
-  width: 100%; /* Fills the container */
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hover Effect */
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* ICON WRAPPER */
-.icon-wrapper {
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent circle */
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 15px;
-}
-
-.icon-wrapper img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-.btn-text{
-  margin-right: -50px;
-}
-
-/* --- SPECIFIC COLORS --- */
-
-/* WhatsApp Green */
-.btn-whatsapp {
-  background: #25D366;
-}
-.btn-whatsapp:hover {
-  background: #20bd5a;
-}
-
-/* Call Button (Yellow/Brand Color) */
-.btn-call {
-  background: #f2c55a; /* Your brand yellow */
-}
-.btn-call:hover {
-  background: #e0b44b;
-}
-
-/* Instagram Gradient */
-.btn-instagram {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-.btn-instagram:hover {
-  opacity: 0.9;
-}
-
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70px;
-  border: none;
-  border-radius: 50px;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 400;
-  cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-  position: relative;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden; /* For any internal shine effects if added */
-}
-
-.btn:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.btn-whatsapp { background-color: #2e8b57; }
-.btn-call { background-color: #5b8dfa; }
-.btn-instagram { background-color: #ff5252; }
-
-/* Icons inside buttons */
-.icon-wrapper {
-  position: absolute;
-  left: 25px; /* Keeps icon fixed to left */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; /* Constrain width */
-  height: 40px;
-  transition: transform 0.3s ease;
-}
-
-.btn:hover .icon-wrapper {
-  transform: scale(1.1); /* Subtle icon pop on hover */
-}
-
-.icon-wrapper img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-/* Footer Info Row */
-.contact-info-row {
-  display: flex;
-  margin-left: -100px;
-  gap: 140px;/* ANIMATION */
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.6s forwards;
-}
-
-.info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-  width: 100px;
-  transition: transform 0.3s ease;
-}
-
-.info-item:hover {
-  transform: translateY(-3px);
-}
-
-/* Footer Icons styling */
-.info-icon-img {
-  width: 30px; 
-  height: 30px;
-  object-fit: contain;
-}
-.info-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.info-text .label {
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: #000;
-  letter-spacing: 0.5px;
-}
-
-.info-text .value {
-  color: #fdd835;  
-  font-weight: 500;
-  width: 180px;
-  font-size: 0.95rem;
-}
-
-/* Right Column (Map) Styling */
-.contact-right {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  
-  /* ANIMATION */
-  opacity: 0;
-  animation: fadeInRight 1s ease-out 0.4s forwards;
-}
-
-.map-wrapper {
-  position: relative;
-  width: 100%;
-  height: auto;
-  border: 1px solid #e0e0e0; 
-  padding: 10px;
+/* =========================
+   BASE
+========================= */
+.contact {
+  padding: 80px 20px;
   background: #fff;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  font-family: "Poppins", sans-serif;
 }
 
-.map-wrapper:hover {
-  transform: scale(1.02);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+.contact__container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
 }
 
-.map-image {
+/* =========================
+   LEFT CONTENT
+========================= */
+.contact__title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.contact__subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.contact__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-btn img {
+  width: 22px;
+}
+
+/* Button colors */
+.whatsapp {
+   background: #25D366; 
+  width: 200px;}
+.call {
+   background: #f2c55a; 
+    width: 200px;
+  }
+.instagram {
+  background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+   width: 200px;
+}
+/* =========================
+   INFO
+========================= */
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact__info p{
+  color: #f2c55a;
+}
+
+
+.info-box {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.info-box img {
+  width: 28px;
+}
+
+/* =========================
+   MAP
+========================= */
+.contact__map img {
   width: 100%;
-  height: auto;
-  display: block;
+  border-radius: 12px;
 }
-
-.location-badge {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  /* Transform handled in keyframes to maintain centering */
-  transform: translateX(-50%); 
-  background-color: #000;
-  color: #fdd835; 
-  padding: 15px 40px;
-  border-radius: 30px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  white-space: nowrap;
-  
-  /* ANIMATION: Float */
-  animation: floatBadge 4s ease-in-out infinite;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* ============================
-   MODERN KEYFRAME ANIMATIONS
-============================ */
-
-/* Fade In Up (for text/buttons) */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Fade In Right (for map) */
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Floating Badge Animation (Preserves center alignment) */
-@keyframes floatBadge {
-  0% {
-    transform: translateX(-50%) translateY(0px);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-10px);
-  }
-  100% {
-    transform: translateX(-50%) translateY(0px);
-  }
-}
-/* =========================================
-   MOBILE RESPONSIVE MEDIA QUERIES (Contact Section)
-   (Paste at the bottom of your CSS file)
-========================================= */
-
-/* --- Tablet & Small Laptops (Max Width: 1024px) --- */
+/* =========================
+   TABLET
+========================= */
 @media (max-width: 1024px) {
-  .contact-section {
-    padding: 60px 20px;
-    height: auto; /* Remove fixed height */
-    min-height: auto;
+  .contact__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
-  .contact-container {
-    flex-direction: column; /* Stack Left and Right columns */
-    align-items: center;
-    gap: 50px;
-    width: 100%;
-  }
-
-  /* Center the Text Content */
-  .contact-left {
-    align-items: center;
-    text-align: center;
-    margin-left: 40px;
-    width: 100%;
-  }
-
-  .contact-title {
-    font-size: 2.8rem; /* Smaller Title */
-  }
-
-  .contact-subtitle {
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    max-width: 100%;
-  }
-
-  /* Center Buttons */
-  .contact-buttons {
-    align-items: center;
-    width: 100%;
-    max-width: 450px;
-  }
-
-  /* Adjust Info Row (Email/Phone text below buttons) */
-  .contact-info-row {
-    justify-content: center;
-    gap: 30px;
-    margin-top: 50px;
+  .contact__title {
+    font-size: 2.4rem;
   }
 }
 
-/* --- Mobile Breakpoint (Max Width: 768px) --- */
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 768px) {
-  .contact-title {
-    font-size: 2.2rem; /* Even smaller for phones */
+  .contact {
+    padding: 60px 16px;
+  }
+  
+.call img{
+  margin-left: -40px;
+}
+
+
+  .contact__container {
+    grid-template-columns: 1fr;
   }
 
-  /* Adjust Buttons for Mobile Touch */
-  .btn {
-    height: 60px; /* Slightly smaller height */
-    font-size: 1.1rem;
-    width: 100%; /* Full width */
-  }
-
-  .icon-wrapper {
-    width: 32px;
-    height: 32px;
-    left: 20px;
-  }
-
-  /* Stack the Info Row Vertically */
-  .contact-info-row {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 450px;
-    gap: 80px;
-  }
-
-  .info-item {
-    flex-direction: column;
-    align-items: center;
+  .contact__title {
+    font-size: 2rem;
     text-align: center;
-    margin-left: 70px;
-    
   }
 
-  /* Map Adjustments */
-  .contact-right {
+  .contact__subtitle {
+    text-align: center;
+  }
+
+  .contact__buttons {
+    align-items: center;
+  }
+
+  .contact-btn {
     width: 100%;
-    margin-left: -250px;
-    margin-top: 50px;
+    justify-content: center;
   }
 
-  .map-wrapper {
-    width: 100%;
-  }
-
-  .location-badge {
-    padding: 10px 25px;
-    font-size: 1.1rem;
-    bottom: 20px;
+  .contact__info {
+    align-items: flex-start;
+    margin-left: 40px;
   }
 }
 
-/* --- Small Mobile Screens (Max Width: 480px) --- */
+/* =========================
+   SMALL MOBILE
+========================= */
 @media (max-width: 480px) {
-  .contact-title {
+  .contact__title {
     font-size: 1.8rem;
   }
 
-  .contact-subtitle {
-    font-size: 0.9rem;
-  }
-
-  /* Compact Buttons */
-  .btn {
-    height: 55px;
-    font-size: 1rem;
-    padding-left: 0;
-    justify-content: center;
-  }
-  
-  /* Fix Icon position for small buttons */
-  .icon-wrapper {
-    position: relative;
-    left: auto;
-    margin-right: 10px;
-  }
-  
-  /* Center text since icon is now relative */
-  .btn-text {
-    margin-right: 0;
-  }
-  .map-wrapper {
-    width: 100%;
-    margin-left: -80px;
-  }
-
-  .location-badge {
-    font-size: 0.9rem;
-    padding: 8px 20px;
-  }
-}
-
-/* =========================================
-   FLOATING CONTACT BUTTONS (STICKY)
-   ========================================= */
-.floating-contact {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 9999; /* Ensure it stays above everything */
-}
-
-.floating-btn {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  animation: floatChat 3s ease-in-out infinite;
-}
-
-/* WhatsApp Specific */
-.whatsapp-btn {
-  background: #25D366;
-}
-
-/* Phone Specific */
-.phone-btn {
-  background: #f2c55a; /* Matches your theme color */
-  animation-delay: 0.5s; /* Staggered animation */
-}
-
-.floating-btn:hover {
-  transform: scale(1.1) translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* --- ANIMATION: Chatbot-style floating --- */
-@keyframes floatChat {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-/* --- MEDIA QUERY: Mobile Adjustments --- */
-@media (max-width: 768px) {
-  .floating-contact {
-    bottom: 20px;
-    right: 20px;
-    gap: 10px;
-  }
-
-  .floating-btn {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .floating-btn svg {
-    width: 24px;
-    height: 24px;
+  .contact-btn {
+    font-size: 0.95rem;
   }
 }
