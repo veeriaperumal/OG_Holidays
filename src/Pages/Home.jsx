@@ -407,9 +407,9 @@ export default function Home() {
           </div>
         </div>
 <button
-  type="button"
   className="contact__btn"
-  onClick={() => navigate("/contact")}
+  onClick={() =>{window.scrollTo(0, 0); 
+  navigate("/contact");}}
 >
   Contact Now
 </button>
