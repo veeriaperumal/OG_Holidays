@@ -411,6 +411,7 @@
   .contact-left {
     align-items: center;
     text-align: center;
+    margin-left: 50px;
     width: 100%;
   }
 
@@ -435,7 +436,7 @@
   .contact-info-row {
     justify-content: center;
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 50px;
   }
 }
 
@@ -462,23 +463,27 @@
   .contact-info-row {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    margin-top: 300px;
+    gap: 80px;
   }
 
   .info-item {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    
   }
 
   /* Map Adjustments */
   .contact-right {
     width: 100%;
+    margin-left: -250px;
+    margin-top: 80px;
   }
 
   .map-wrapper {
     width: 100%;
-    padding: 5px;
+    margin-left: -95px;
   }
 
   .location-badge {
