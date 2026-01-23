@@ -255,8 +255,9 @@ html {
 }
 
 .home-search-btn:hover {
-  background: #111;
-  color: #fff;
+   transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(242, 197, 90, 0.4);
+
 }
 
 /* MAIN CONTAINER */

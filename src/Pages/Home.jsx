@@ -125,7 +125,13 @@ export default function Home() {
             expert guidance, and easy, hassle-free travel.
           </p>
 
-          <button className="call-btn">Call Now</button>
+          <button
+  type="button"
+  className="call-btn"
+  onClick={() => navigate("/contact")}
+>
+  Call Now
+</button>
         </div>
 
         {/* RIGHT IMAGES */}
@@ -173,9 +179,13 @@ export default function Home() {
           <input type="text" placeholder="Type Of Venue / Choose Destination*" />
           <input type="date" />
           <input type="text" placeholder="Select Travellers*" />
-          <button className="home-search-btn">
-            Search <span>→</span>
-          </button>
+         <button
+  type="button"
+  className="home-search-btn"
+  onClick={() => navigate("/services")}
+>
+  Search <span>→</span>
+</button>
         </div>
 
         <div className="home-about-container">
