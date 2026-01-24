@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     name: "Varun Family",
-    subtitle: "Family Vacation",
+    subtitle: "spiritual Tour",
     image: "/images/testimonial3.png",
     text: `Our family trip was extremely smooth and comfortable thanks to OG Holidays. The team suggested kid-friendly spots, activities, and hotels that made our travel easy. Everything was organised well, and we never faced any issues. A very happy and memorable family holiday`,
   },

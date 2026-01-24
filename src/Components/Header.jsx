@@ -29,26 +29,25 @@ export default function Header() {
         <div className="top-left">
           <div className="contact-item">
             <img src="/images/headerp.png" alt="Phone" className="header-icon" />
+            <span>+91 8754716319</span>
             <span>+91 7339359148</span>
           </div>
           <div className="contact-item">
             <img src="/images/headere.png" alt="Email" className="header-icon" />
-            <span>ogholidays72gmail@gmail.com</span>
+            <span>ogholidays7@gmail.com</span>
           </div>
         </div>
 
         {/* Right Side: Socials */}
         <div className="top-right">
           <div className="social-icons">
-            <a href="#" className="social-link">
-              <img src="/images/fac.png" alt="FB" />
+            <a href="https://wa.me/message/URO5FLGSHZNON1" className="social-link">
+              <img src="/images/whatsapp.png" alt="FB" />
             </a>
-            <a href="#" className="social-link">
+            <a href="https://www.instagram.com/og_holidays" className="social-link">
               <img src="/images/insta1.png" alt="IG" />
             </a>
-            <a href="#" className="social-link">
-              <img src="/images/you.png" alt="YT" />
-            </a>
+            
           </div>
         </div>
       </div>
