@@ -72,7 +72,7 @@ export default function Footer() {
         alt="Email"
         className="footer-contact-icon"
       />
-      <p className="footer-contact-text">ogholidays72gmail@gmail.com</p>
+      <p className="footer-contact-text">ogholidays7@gmail.com</p>
     </div>
 
     {/* Location */}
@@ -83,7 +83,9 @@ export default function Footer() {
         className="footer-contact-icon"
       />
       <p className="footer-contact-text">
-        1014 N Main St, Miami, Oklahoma, 74354, United States
+       1, 6th Cross Street,
+        Brindavanam,
+        Puducherry - 605013
       </p>
     </div>
   </div>
