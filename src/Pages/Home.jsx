@@ -21,8 +21,8 @@ const testimonials = [
     text: `We loved how perfectly OG Holidays organised our romantic vacation. The itinerary had a great mix of relaxation and sightseeing. Every detail was handled smoothly, making the trip enjoyable from the first day to the last. A truly beautiful experience for us as a couple`,
   },
   {
-    name: "Varun Family",
-    subtitle: "spiritual Tour",
+    name: "spiritual Tour",
+    subtitle: "",
     image: "/images/testimonial3.png",
     text: `Our family trip was extremely smooth and comfortable thanks to OG Holidays. The team suggested kid-friendly spots, activities, and hotels that made our travel easy. Everything was organised well, and we never faced any issues. A very happy and memorable family holiday`,
   },
