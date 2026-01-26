@@ -208,6 +208,17 @@ body {
 .contact-btn span{
   color: white;
 }
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 150px;     /* adjust size */
+  width: auto;
+  object-fit: contain;
+}
+
 .search-btn {
   width: 40px;
   height: 40px;
@@ -314,6 +325,23 @@ body {
     display: flex;
     align-items: center;
     background: #000;
+  }
+}
+/* Tablet */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 42px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logo-img {
+    height: 74px;
+  }
+
+  .logo {
+    justify-content: center; /* optional: center logo on mobile */
   }
 }
 /* =========================================

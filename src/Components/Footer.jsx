@@ -8,28 +8,33 @@ export default function Footer() {
         {/* FOOTER CONTENT */}
         <div className="footer-content">
           {/* BRAND */}
-          <div className="footer-brand">
-            <h2>
-              <span>OG</span> HOLIDAYS
-            </h2>
-            <p>
-              Delivering perfect holidays <br />
-              with comfort, safety, and <br />
-              great value
-            </p>
+        <div className="footer-brand">
+  {/* Logo instead of text */}
+  <img
+    src="/OG.png"
+    alt="OG Holidays Logo"
+    className="footer-logo"
+  />
 
-            {/* ... inside the footer-brand div ... */}
+  <p>
+    Delivering perfect holidays <br />
+    with comfort, safety, and <br />
+    great value
+  </p>
 
-            <div className="footer-socials">
-              {/* Make sure these images exist in public/images/ */}
+  <div className="footer-socials">
+    <div className="footer-social-icon">
+      <a
+        href="https://www.instagram.com/og_holidays"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/images/insta1.png" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+</div>
 
-              <div className="footer-social-icon">
-                <a href="https://www.instagram.com/og_holidays" >
-                  <img src="/images/insta1.png" alt="Instagram" />
-                </a>
-              </div>
-            </div>
-          </div>
 
           {/* --- 2. UPDATED QUICK LINKS WITH SCROLL --- */}
           <div className="footer-links">

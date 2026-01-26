@@ -1854,4 +1854,27 @@ html {
     height: 24px;
   }
 }
+.home-brand-logo {
+  height: 150px;        /* Desktop */
+  width: auto;
+  margin-top: 10px;
+  object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .home-brand-logo {
+    height: 60px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .home-brand-logo {
+    height: 150px;
+    display: block;
+    margin: 12px auto 0; /* center logo on mobile */
+  }
+}
+
 

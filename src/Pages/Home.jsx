@@ -113,12 +113,17 @@ export default function Home() {
         <div className="home-content">
           <span className="home-tagline">Relax & Enjoy the Vacation</span>
 
-          <h1 className="home-title">
-            Explore The Most <br />
-            Stunning <br />
-            Destinations With <br />
-            <span>OG Holidays</span>
-          </h1>
+         <h1 className="home-title">
+  Explore The Most <br />
+  Stunning <br />
+  Destinations With <br />
+  <img
+    src="/OG.png"
+    alt="OG Holidays"
+    className="home-brand-logo"
+  />
+</h1>
+
 
           <p className="home-desc">
             Find your dream trip with OG Holidays. We offer personalised plans,

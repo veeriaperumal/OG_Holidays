@@ -35,6 +35,41 @@
   display: flex;
   gap: 12px;
 }
+.footer-logo {
+  height: 150px;       /* adjust if needed */
+  width: auto;
+  margin-bottom: 12px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* change to center if needed */
+}
+/* Tablet */
+@media (max-width: 768px) {
+  .footer-logo {
+    height: 120px;
+  }
+
+  .footer-brand {
+    align-items: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .footer-logo {
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  .footer-brand {
+    align-items: center;
+    text-align: center;
+  }
+}
+
 
 .newsletter-form input {
   width: 260px;

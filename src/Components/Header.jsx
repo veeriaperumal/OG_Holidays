@@ -55,10 +55,10 @@ export default function Header() {
       {/* Main Header */}
       <header className="main-header">
         {/* Logo */}
-        <div className="logo">
-          <span className="og">Og</span>
-          <span className="holidays">Holidays</span>
-        </div>
+       <div className="logo">
+  <img src="/OG.png" alt="OG Holidays Logo" className="logo-img" />
+</div>
+
 
         {/* Navigation - Logic added for Mobile Class */}
         <nav className={`nav ${isMobileMenuOpen ? "nav-mobile-active" : ""}`}>
