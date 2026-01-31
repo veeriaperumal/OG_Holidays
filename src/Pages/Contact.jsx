@@ -1,4 +1,3 @@
-import React from "react";
 import "./Contact.css";
 
 const Contact = () => {
@@ -52,14 +51,22 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="info-box">
-              <img src="/images/loc.png" alt="" />
-              <p>
-                1, 6th Cross Street,<br />
-                Brindavanam,<br />
-                Puducherry - 605013
-              </p>
-            </div>
+          <div className="info-box">
+  <a
+   href="https://www.google.com/maps?q=11.940417,79.818639"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ textDecoration: "none", color: "inherit" }}
+  >
+    <img src="/images/loc.png" alt="Location" />
+    <p>
+      1, 6th Cross Street,<br />
+      Brindavanam,<br />
+      Puducherry - 605013
+    </p>
+  </a>
+</div>
+
 
             <div className="info-box">
               <img src="/images/email.png" alt="" />
@@ -71,10 +78,20 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* RIGHT MAP */}
-        <div className="contact__map">
-          <img src="/images/map.png" alt="Map" />
-        </div>
+{/* RIGHT MAP */}
+<div className="contact__map">
+  <iframe
+    title="location-map"
+    src="https://www.google.com/maps?q=11.940417,79.818639&z=15&output=embed"
+    width="100%"
+    height="400"
+    style={{ border: 0 }}
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
+
 
       </div>
               {/* STICKY CONTACT BUTTONS */}

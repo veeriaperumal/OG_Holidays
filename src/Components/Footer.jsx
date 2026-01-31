@@ -1,6 +1,18 @@
 import "./Footer.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+
+    const navigate = useNavigate();
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
   return (
     <footer className="footer-bottom">
       <section className="footer-section">
@@ -36,18 +48,17 @@ export default function Footer() {
 </div>
 
 
-          {/* --- 2. UPDATED QUICK LINKS WITH SCROLL --- */}
-          <div className="footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li onClick={() => scrollToSection("about")}>About Us</li>
-              <li onClick={() => scrollToSection("/services")}>Services</li>
-              <li onClick={() => scrollToSection("/packages")}>Packages</li>
-              <li onClick={() => scrollToSection("testimonials")}>Testimonials</li>
-              <li onClick={() => scrollToSection("/contact")}>Contact Us</li>
-              <li onClick={() => scrollToSection("destinations")}>Destinations</li>
-            </ul>
-          </div>
+           <div className="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li onClick={() => scrollToSection("about")}>About Us</li>
+        <li onClick={() => navigate("/services")}>Services</li>
+        <li onClick={() => navigate("/packages")}>Packages</li>
+        <li onClick={() => scrollToSection("testimonials")}>Testimonials</li>
+        <li onClick={() => navigate("/contact")}>Contact Us</li>
+        <li onClick={() => scrollToSection("destinations")}>Destinations</li>
+      </ul>
+    </div>  
 
           {/* CONTACT */}
           <div className="footer-contact">
@@ -75,18 +86,27 @@ export default function Footer() {
             </div>
 
             {/* Location */}
-            <div className="footer-contact-item">
-              <img
-                src="/images/map1.png"
-                alt="Location"
-                className="footer-contact-icon"
-              />
-              <p className="footer-contact-text">
-                1, 6th Cross Street,
-                Brindavanam,<br />
-                Puducherry - 605013
-              </p>
-            </div>
+         {/* Location */}
+<a
+  href="https://www.google.com/maps?q=11.940417,79.818639"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ textDecoration: "none", color: "inherit" }}
+>
+  <div className="footer-contact-item">
+    <img
+      src="/images/map1.png"
+      alt="Location"
+      className="footer-contact-icon"
+    />
+    <p className="footer-contact-text">
+      1, 6th Cross Street,
+      Brindavanam,<br />
+      Puducherry - 605013
+    </p>
+  </div>
+</a>
+
           </div>
 
           {/* INSTAGRAM */}
