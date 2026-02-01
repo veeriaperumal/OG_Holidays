@@ -82,7 +82,7 @@ export default function Footer() {
                 alt="Email"
                 className="footer-contact-icon"
               />
-              <p className="footer-contact-text">ogholidays7@gmail.com</p>
+              <p className="footer-contact-text">info@ogholidays.co</p>
             </div>
 
             {/* Location */}

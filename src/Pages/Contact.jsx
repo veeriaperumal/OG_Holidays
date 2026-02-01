@@ -72,7 +72,7 @@ const Contact = () => {
               <img src="/images/email.png" alt="" />
               <div>
                 <strong>Email</strong>
-                <p>ogholidays7@gmail.com</p>
+                <p>info@ogholidays.co</p>
               </div>
             </div>
           </div>
